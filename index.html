@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>出校</title>
+    <style>
+        body {
+            position: absolute;
+            display: flex;
+            height: 100%;
+            width: 100%;
+            float: left;
+            flex-direction: column;
+        }
+
+        .title {
+            display: flex;
+            font-size: 200%;
+            width: 100%;
+            height: 8%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .picture {
+            display: flex;
+            height: 20%;
+            width: 100%;
+            /*background-image: url(../picture/portrait.jpg);
+            background-repeat: no-repeat;*/
+            background-position: center;
+            background-size: contain;
+        }
+
+        .id {
+            font-size: 100%;
+            display: flex;
+            height: 5%;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text {
+            font-size: 250%;
+            display: flex;
+            height: 35%;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #show_time {
+            display: flex;
+            color: red;
+            font-size: 200%;
+            justify-content: center;
+            align-items: center;
+            height: 12%;
+            width: 100%;
+        }
+
+        .green {
+            width: 100%;
+            height: 20%;
+            background-image: url(../picture/green.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="title">出校</div>
+    <div class="id">温兰兰-201930030731</div>
+    <hr style="filter: progid;">
+    <div class="text">学生：白名单验证通过，该申请离校扫码1次，离校码只能使用一次，请不要重复打开</div>
+    <div id="show_time">  
+        <script>  
+        //这里代码多了几行，但是不会延迟显示，速度比较好，格式可以自定义，是理想的时间显示
+        setInterval("fun(show_time)",1);
+        function fun(timeID){ 
+        var date = new Date();  //创建对象  
+        var h = date.getHours();  //时
+        var minute = date.getMinutes()  //分
+        var s = date.getSeconds(); //秒
+        var sss = date.getMilliseconds() ; //毫秒
+        if(h<10){
+        h = "0"+h;
+        }
+         
+         
+        if(minute<10){
+        minute = "0"+minute;
+        }
+         
+         
+        if(s<10){
+        s = "0"+s;
+        }
+         
+         
+        if(sss<10){
+        sss = "00"+sss;
+        }else if(sss<100){
+        sss = "0"+sss;
+        }
+         
+         
+        document.getElementById(timeID.id).innerHTML =  h+":"+minute+":"+s+"."+sss;
+        //document.write(y+"-"+m+"-"+d+"   "+h+":"+minute+":"+s);  
+          }
+        </script>  
+        </div>
+        <div class="green"></div>
+</body>
+</html>
